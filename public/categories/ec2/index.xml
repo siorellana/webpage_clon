@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>EC2 on siorellana&#39;s Web Site</title>
+    <link>http://siorellana.com/categories/ec2/</link>
+    <description>Recent content in EC2 on siorellana&#39;s Web Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 05 Jun 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://siorellana.com/categories/ec2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AWS Elastic Compute Cloud (EC2)</title>
+      <link>http://siorellana.com/blog/aws/aws-ec2-elastic-compute-cloud-dh23-34dd/</link>
+      <pubDate>Wed, 05 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://siorellana.com/blog/aws/aws-ec2-elastic-compute-cloud-dh23-34dd/</guid>
+      <description>AWS EC2 Elastic Compute Cloud EC2 es el servicio de AWS que permite crear maquinas virtuales en la nube. Para efectos prácticos se llaman instancias, ya que cuando se crea una máquina virtual nueva, en realidad se crea una instancia dentro de un host. Estas instancias están diseñadas para imitar el comportamiento de una maquina física, tal como lo hace VMWare o Hyper-V, pero con la ventaja de poder ser creadas y eliminadas bajo demanda para así lograr la elasticidad, simplicidad y escalabilidad que tienen trabajar con los proveedores de servicios cloud.</description>
+    </item>
+    
+  </channel>
+</rss>

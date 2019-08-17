@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VPC on siorellana&#39;s Web Site</title>
+    <link>http://siorellana.com/categories/vpc/</link>
+    <description>Recent content in VPC on siorellana&#39;s Web Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 07 Jun 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://siorellana.com/categories/vpc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AWS Virtual Private Cloud (VPC)</title>
+      <link>http://siorellana.com/blog/aws/aws-vpc-virtual-private-cloud-d7979c3f-49c3-45ae-9540-a4e56ed2bc8c/</link>
+      <pubDate>Fri, 07 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://siorellana.com/blog/aws/aws-vpc-virtual-private-cloud-d7979c3f-49c3-45ae-9540-a4e56ed2bc8c/</guid>
+      <description>AWS VPC Virtual Private Cloud Amazon Virtual Private Cloud (Amazon VPC) permite crear redes virtuales privadas en AWS para comunicar los distintos servicios o instancias EC2 simulando un entorno de red local como en un data center, pero con el beneficio de usar la infraestructura escalable de AWS. Antiguamente (previo a 2013) todas las instancias compartían una red publica y se aislaban mediante reglas de Firewall, pero esto no era óptimo y agregaba complejidad a las arquitecturas de las aplicaciones, por lo que se creó este servicio en el cual cada cliente puede tener su propia red privada y aislada del resto de los clientes.</description>
+    </item>
+    
+  </channel>
+</rss>

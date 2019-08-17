@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RDS on siorellana&#39;s Web Site</title>
+    <link>http://siorellana.com/categories/rds/</link>
+    <description>Recent content in RDS on siorellana&#39;s Web Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 09 Jun 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://siorellana.com/categories/rds/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AWS Database Essentials</title>
+      <link>http://siorellana.com/blog/aws/aws-database-essentials-84d963ea-63a4-4a54-bfbd-b19a84fb20a8/</link>
+      <pubDate>Sun, 09 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://siorellana.com/blog/aws/aws-database-essentials-84d963ea-63a4-4a54-bfbd-b19a84fb20a8/</guid>
+      <description>AWS Database Essentials Cuando se trabaja con bases de datos, existen una serie de términos y conceptos que son necesarios para poder entender las diferencias entre los distintos productos o servicios que se encuentran disponibles en AWS. En este post, revisaremos algunos de estos conceptos para un mejor entendimiento de los post que vengan en el futuro.
+Terminología Base de datos relacional  Datos se encuentran estructurados con esquemas. La información se encuentra normalizada y distribuida a través de multiples tablas.</description>
+    </item>
+    
+  </channel>
+</rss>
