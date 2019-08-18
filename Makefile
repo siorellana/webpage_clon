@@ -8,14 +8,14 @@ all: help
 build: ## Compila el codigo y lo sube a Firebase
 	@git add . || \
 	echo "[ERROR] Cambios no agregados"
-	@hugo || \
+	@hugo || \dock
 	echo "[ERROR] HUGO no ejecutado"
 	@firebase deploy || \
 	echo "[ERROR] Cambios no enviados a Firebase"
 	@docker build -t siorellana/$(name) . || \
 	echo "[ERROR] Imagen no creada"
 
-deploy: test build commit push
+deploy: test build commit push registry
 
 run: ## Ejecuta contenedor con puerto 81
 	@echo "[INFO] Starting container"
@@ -40,6 +40,11 @@ push: ## Realiza push a master
 
 registry: ## Envía imagen a docker hub
 	@docker push siorellana/webpage:latest
+
+k8s: ## Crea namespace en cluster de k8s.
+	@kubectl apply -f bin/00-namespace.yaml
+	@kubectl -n $(name) apply -f bin/01-service.yaml
+	@kubectl -n $(name) apply -f bin/02-rcontroller.yaml
 
 init:
 	@
