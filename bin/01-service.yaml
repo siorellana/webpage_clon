@@ -10,3 +10,4 @@ spec:
     nodePort: 30000
   selector:
     role: siorellana 
+    app: hugo

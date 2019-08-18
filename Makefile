@@ -41,12 +41,15 @@ push: ## Realiza push a master
 registry: ## Envía imagen a docker hub
 	@docker push siorellana/webpage:latest
 
-k8s: ## Crea namespace en cluster de k8s.
+
+init:
+	@
+
+k8s: ## Comandos de K8S para distintos artefactos
 	@kubectl apply -f bin/00-namespace.yaml
 	@kubectl -n $(name) apply -f bin/01-service.yaml
 	@kubectl -n $(name) apply -f bin/02-rcontroller.yaml
 	@kubectl -n $(name) apply -f bin/03-loadbalancer.yaml
 	@kubectl -n $(name) apply -f bin/04-deployment.yaml
-
-init:
-	@
+	@kubectl apply -f bin/metrics
+	@kubectl -n $(name) apply -f bin/05-hpa.yaml

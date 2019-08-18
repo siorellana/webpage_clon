@@ -6,8 +6,9 @@ spec:
   replicas: 3
   template:
     metadata:
-      labels:
-        role: siorellana
+      selector:
+        role: siorellana 
+        app: hugo
     spec:
       containers:
       - name: siorellana 
