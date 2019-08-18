@@ -80,7 +80,7 @@ Su popularidad se debe a que es una herramienta muy fácil de utilizar, con una 
 
 {{< fancybox path="/img/2019/08" file="Untitled-981a9957-7e91-46cb-9ae1-4c0a95769efd.png" caption="Interfaz de usuario de Jenkins." gallery="Gallery Name" >}}
 
-Comenzar a utilizar Jenkins en realidad no tiene una complejidad mayor y un servidor puede ser implementado en minutos. También Jenkins posee una flexibilidad extrema gracias a sus miles de complementos que proporcionan funcionalidades como:
+Comenzar a utilizar Jenkins en realidad no tiene una complejidad mayor, ya que un servidor puede ser implementado en minutos. También Jenkins posee una flexibilidad extrema gracias a sus miles de complementos que proporcionan funcionalidades como:
 
 - Complementos de sistemas de control de versiones.
 - Métricas de calidad de código.
