@@ -8,7 +8,7 @@ all: help
 build: ## Compila el codigo y lo sube a Firebase
 	@git add . || \
 	echo "[ERROR] Cambios no agregados"
-	@hugo || \dock
+	@hugo || \
 	echo "[ERROR] HUGO no ejecutado"
 	@firebase deploy || \
 	echo "[ERROR] Cambios no enviados a Firebase"
@@ -45,6 +45,8 @@ k8s: ## Crea namespace en cluster de k8s.
 	@kubectl apply -f bin/00-namespace.yaml
 	@kubectl -n $(name) apply -f bin/01-service.yaml
 	@kubectl -n $(name) apply -f bin/02-rcontroller.yaml
+	@kubectl -n $(name) apply -f bin/03-loadbalancer.yaml
+	@kubectl -n $(name) apply -f bin/04-deployment.yaml
 
 init:
 	@

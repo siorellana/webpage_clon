@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: siorellana
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        role: siorellana
+    spec:
+      containers:
+      - name: siorellana 
+        image: siorellana/webpage:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
