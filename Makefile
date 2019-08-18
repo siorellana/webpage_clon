@@ -5,6 +5,8 @@ BUILDID=$(shell date +%Y%m%d-%H:%M:%S)
 
 all: help
 
+deploy: test build commit push registry
+
 build: ## Compila el codigo y lo sube a Firebase
 	@git add . || \
 	echo "[ERROR] Cambios no agregados"
@@ -14,8 +16,6 @@ build: ## Compila el codigo y lo sube a Firebase
 	echo "[ERROR] Cambios no enviados a Firebase"
 	@docker build -t siorellana/$(name) . || \
 	echo "[ERROR] Imagen no creada"
-
-deploy: test build commit push registry
 
 run: ## Ejecuta contenedor con puerto 81
 	@echo "[INFO] Starting container"
