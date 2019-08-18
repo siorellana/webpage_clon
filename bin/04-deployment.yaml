@@ -8,7 +8,6 @@ spec:
     metadata:
       selector:
         role: siorellana 
-        app: hugo
     spec:
       containers:
       - name: siorellana 
