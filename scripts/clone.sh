@@ -5,6 +5,10 @@ git remote -v
 
 git remote remove origin
 
+rm -rf .git
+
+git init
+
 git remote add origin https://github.com/siorellana/test_clone.git
 
 echo "Current time : $now" >> timestamp.out
