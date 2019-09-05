@@ -12,14 +12,14 @@ pipeline {
         
         stage ('Clonar a GitHub') {
             steps {
-                        withCredentials([usernamePassword(
-						credentialsId: 'siorellana-gh', 
-						usernameVariable: 'USER', 
-						passwordVariable: 'PASS')]){
+                    withCredentials([usernamePassword(
+                    credentialsId: 'siorellana-gh', 
+                    usernameVariable: 'USER', 
+                    passwordVariable: 'PASS')]){
+
                             echo "==========================###############################==================="
                             echo "==========================###### Starting process #######==================="
                             echo "==========================###############################==================="
-
                             echo "======= Get source from GitLab  ========="
                             sh "git remote -v"
                             echo "======= Delete Gitlab as source  ========="
@@ -35,9 +35,9 @@ pipeline {
                             echo "==========================###############################==================="
                             echo "==========================###### Finishing process ######==================="
                             echo "==========================###############################==================="
-                        }
 
+                        }
+                    }
+                }
             }
         }
-    }
-}
