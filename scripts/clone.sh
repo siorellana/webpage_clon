@@ -10,7 +10,7 @@ echo "Current time : $now" >> timestamp.log
 
 git add .
 
-git commit -am 'Initial commit bla bla'
+#git commit -am 'Initial commit bla bla'
 
 git push -u origin master
 
