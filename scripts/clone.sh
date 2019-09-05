@@ -1,4 +1,5 @@
 #!/bin/bash
+now=$(date +"%T")
 
 git remote -v
 
