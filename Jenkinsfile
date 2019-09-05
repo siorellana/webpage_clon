@@ -8,6 +8,10 @@ pipeline {
 	    }
 	}
 
+    triggers { 
+        pollSCM('H/5 * * * *') 
+    }
+
 	stages {
         
         stage ('Clonar a GitHub') {
