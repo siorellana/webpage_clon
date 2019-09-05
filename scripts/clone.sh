@@ -7,7 +7,7 @@ git remote remove origin
 
 git remote add origin https://github.com/siorellana/test_clone.git
 
-echo "Current time : $now" >> timestamp.log
+echo "Current time : $now" >> timestamp.out
 
 git add .
 
