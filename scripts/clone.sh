@@ -10,7 +10,7 @@ rm -rf .git
 
 git init
 
-git remote add origin https://github.com/siorellana/test_clone.git
+git remote add origin https://siorellana:Seba0005@github.com/siorellana/test_clone.git
 
 echo "Current time : $now" >> timestamp.out
 
