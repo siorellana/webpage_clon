@@ -26,7 +26,7 @@ pipeline {
                 sh "git remote add origin https://siorellana:Seba0005@github.com/siorellana/test_clone.git"
                 echo "======= Obtener el origen desde GitLab  ========="
                 sh "git add ."
-                sh "git commit -am '$(curl -s whatthecommit.com | grep '<p>' | cut -c 4-)'"
+                sh "git commit -am 'Commit from Jenkins"
                 sh "git push -u origin master --force"
 
             }
