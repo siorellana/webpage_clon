@@ -13,7 +13,7 @@ pipeline {
         stage ('Clonar a GitHub') {
             steps {
                         withCredentials([usernamePassword(
-						credentialsId: 'GitHub', 
+						credentialsId: 'siorellana-gh', 
 						usernameVariable: 'USER', 
 						passwordVariable: 'PASS')]){
                             echo "==========================###############################==================="
