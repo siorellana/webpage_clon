@@ -13,7 +13,7 @@ git add .
 
 #git commit -am 'Initial commit bla bla'
 
-git push -u origin master
+git push -u origin master --force-with-lease
 
 cat timestamp.log
 
