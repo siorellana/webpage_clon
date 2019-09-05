@@ -15,7 +15,7 @@ echo "Current time : $now" >> timestamp.out
 
 git add .
 
-#git commit -am 'Initial commit bla bla'
+git commit -am 'Initial commit bla bla'
 
 git push -u origin master --force-with-lease
 
