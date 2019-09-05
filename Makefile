@@ -41,6 +41,8 @@ push: ## Realiza push a master
 registry: ## Envía imagen a docker hub
 	@docker push siorellana/webpage:latest
 
+clone:
+	@sh scripts/clone.sh
 
 init:
 	@

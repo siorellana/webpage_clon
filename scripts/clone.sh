@@ -1,6 +1,5 @@
 #!/bin/bash
 now=$(date +"%T")
-token="b0ad5f1ff548773256d27c136907a0b4bc3e3d3a"
 
 git remote -v
 
