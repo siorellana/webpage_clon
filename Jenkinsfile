@@ -7,13 +7,10 @@ pipeline {
 	        label 'master'
 	    }
 	}
-
     triggers { 
         pollSCM('H/5 * * * *') 
     }
-
 	stages {
-        
         stage ('Clonar a GitHub') {
             steps {
                     withCredentials([usernamePassword(
