@@ -8,10 +8,10 @@ all: help
 deploy: test build commit push registry
 
 build: ## Compila el codigo y lo sube a Firebase
-	@git add . || \
-	echo "[ERROR] Cambios no agregados"
 	@hugo || \
 	echo "[ERROR] HUGO no ejecutado"
+	@git add . || \
+	echo "[ERROR] Cambios no agregados"
 	@firebase deploy || \
 	echo "[ERROR] Cambios no enviados a Firebase"
 	@docker build -t siorellana/$(name) . || \
@@ -33,7 +33,7 @@ help:
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
 
 commit: ## Realiza commit con variable de whatthecommit
-	@git commit -m 'Se han realizado nuevos cambios - su build id es: $(BUILDID)'
+	@git commit -am 'Se han realizado nuevos cambios - su build id es: $(BUILDID)'
 
 push: ## Realiza push a master
 	@git push origin master
