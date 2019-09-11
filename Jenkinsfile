@@ -10,7 +10,31 @@ pipeline {
     triggers { 
         pollSCM('H/5 * * * *') 
     }
-	stages {
+
+    stages {
+        stage ('Clonar desde Gitlab') {
+            steps {
+                    withCredentials([usernamePassword(
+                    credentialsId: 'siorellana-gl', 
+                    usernameVariable: 'USER', 
+                    passwordVariable: 'PASS')]){
+
+                            echo "=========================###############################=================="
+                            echo "=========================###### Starting process #######=================="
+                            echo "=========================###############################=================="
+                            echo "======= Get source from GitLab  ========="
+                            sh "git clone --mirror https://gitlab.com/siorellana/siorellana.git"
+                            echo "======= Mirror to the new repository  ========="
+                            sh "cd siorellana/"
+                            echo "=========================###############################================="
+                            echo "=========================###### Finishing process ######=================="
+                            echo "=========================###############################=================="
+
+                        }
+                    }
+                }
+            }
+
         stage ('Clonar a GitHub') {
             steps {
                     withCredentials([usernamePassword(
@@ -34,5 +58,4 @@ pipeline {
                         }
                     }
                 }
-            }
         }
