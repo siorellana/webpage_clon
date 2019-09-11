@@ -24,6 +24,7 @@ pipeline {
                             echo "======= Get source from GitLab  ========="
                             sh "git remote -v"
                             echo "======= Mirror to the new repository  ========="
+                            sh "git checkout jenkins"
                             sh "git push --mirror https://${USER}:${PASS}@github.com/siorellana/test_clone.git"
                             echo "=========================###############################=================="
                             echo "=========================###### Finishing process ######=================="
