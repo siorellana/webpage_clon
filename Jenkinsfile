@@ -25,7 +25,6 @@ pipeline {
                             sh "git remote -v"
                             echo "======= Mirror to the new repository  ========="
                             sh "git remote set-url --push origin https://${USER}:${PASS}@github.com/siorellana/test_clone.git"
-                            sh "git fetch -p origin"
                             sh "git push --mirror"
                             echo "=========================###############################=================="
                             echo "=========================###### Finishing process ######=================="
