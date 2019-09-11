@@ -27,7 +27,7 @@ pipeline {
                             sh "git clone --mirror https://${USER}:${PASS}@gitlab.com/siorellana/siorellana.git"
                             echo "======= Mirror to the new repository  ========="
                             sh "ls -l"
-                            sh "cd ./siorellana/"
+                            sh "cd ./siorellana.git/"
                             echo "=========================###############################================="
                             echo "=========================###### Finishing process ######=================="
                             echo "=========================###############################=================="
