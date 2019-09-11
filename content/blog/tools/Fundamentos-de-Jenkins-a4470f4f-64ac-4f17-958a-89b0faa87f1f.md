@@ -86,3 +86,5 @@ Comenzar a utilizar Jenkins en realidad no tiene una complejidad mayor, ya que u
 - Métricas de calidad de código.
 - Notificaciones de compilación.
 - Personalización de interfaces de usuarios.
+
+### Continuará ...
