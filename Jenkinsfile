@@ -23,7 +23,7 @@ pipeline {
                             echo "=========================###### Starting process #######=================="
                             echo "=========================###############################=================="
                             echo "======= Get source from GitLab  ========="
-                            sh "git clone --mirror https://gitlab.com/siorellana/siorellana.git"
+                            sh "git clone --mirror https://${USER}:${PASS}@gitlab.com/siorellana/siorellana.git"
                             echo "======= Mirror to the new repository  ========="
                             sh "cd siorellana/"
                             echo "=========================###############################================="
