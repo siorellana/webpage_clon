@@ -32,7 +32,11 @@ pipeline {
 
                         }
                     }
-            steps {
+            
+                }
+
+            stage ('Clonar a Github') {
+                steps {
                     withCredentials([usernamePassword(
                     credentialsId: 'siorellana-gh', 
                     usernameVariable: 'USER', 
