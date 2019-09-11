@@ -32,10 +32,6 @@ pipeline {
 
                         }
                     }
-                }
-            }
-
-        stage ('Clonar a GitHub') {
             steps {
                     withCredentials([usernamePassword(
                     credentialsId: 'siorellana-gh', 
@@ -58,4 +54,9 @@ pipeline {
                         }
                     }
                 }
+            }
         }
+
+
+
+
