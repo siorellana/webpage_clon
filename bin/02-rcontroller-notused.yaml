@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: siorellana 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        role: siorellana 
+    spec:
+      containers:
+      - name: siorellana 
+        image: siorellana/webpage:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80

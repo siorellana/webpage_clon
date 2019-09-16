@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Markdown on siorellana&#39;s Web Site</title>
+    <link>http://siorellana.com/categories/markdown/</link>
+    <description>Recent content in Markdown on siorellana&#39;s Web Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 01 Jun 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://siorellana.com/categories/markdown/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Guía para usar Markdown</title>
+      <link>http://siorellana.com/blog/tools/post-tool-markdown/</link>
+      <pubDate>Sat, 01 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://siorellana.com/blog/tools/post-tool-markdown/</guid>
+      <description>Markdown es una herramienta de escritura que es utilizada generalmente para hacer la conversión de texto plano a HTML. Tiene una forma de escribir bastante sencilla y debido a que es texto plano, siempre mantiene un diseño legible y compatible con todas las plataformas o aplicaciones en cualquier dispositivo.
+A continuación dejo ejemplos de como utilizar Markdown.
+Agradecimientos especiales a Markdown Cheatsheet.
+Títulos H1 H2 H3 H4 H5 H6 Alt-H1 Alt-H2 # H1 ## H2 ### H3 #### H4 ##### H5 ###### H6 Alt-H1 ====== Alt-H2 ------  Formatos de letra Emphasis, aka italics, with asterisks or underscores.</description>
+    </item>
+    
+  </channel>
+</rss>

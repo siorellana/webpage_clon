@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ELB on siorellana&#39;s Web Site</title>
+    <link>http://siorellana.com/categories/elb/</link>
+    <description>Recent content in ELB on siorellana&#39;s Web Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 08 Jun 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://siorellana.com/categories/elb/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AWS AutoScaling y Elastic Load Balancer (ELB)</title>
+      <link>http://siorellana.com/blog/aws/autoscaling-c2b66cf9-bfa7-4162-90ec-240eb9115128/</link>
+      <pubDate>Sat, 08 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://siorellana.com/blog/aws/autoscaling-c2b66cf9-bfa7-4162-90ec-240eb9115128/</guid>
+      <description>Autoscaling Es una de las principales ventajas de utilizar servicios cloud, ya que permite la flexibilidad de usar recursos bajo demanda en base a factores como la carga de un servidor. Quiero aclarar que sí es posible escalar en un ambiente on-premise utilizando las herramientas correctas, pero requiere de una fuerte inversión de infraestructura que debe ser aprovisionada con anterioridad. En cambio al hacerlo en la nube, los recursos ya se encuentran disponible si inversión inicial, sólo pago por uso.</description>
+    </item>
+    
+  </channel>
+</rss>

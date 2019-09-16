@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DevOps on siorellana&#39;s Web Site</title>
+    <link>http://siorellana.com/categories/devops/</link>
+    <description>Recent content in DevOps on siorellana&#39;s Web Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 05 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://siorellana.com/categories/devops/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Jenkins in a nutshell</title>
+      <link>http://siorellana.com/blog/tools/fundamentos-de-jenkins-a4470f4f-64ac-4f17-958a-89b0faa87f1f/</link>
+      <pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://siorellana.com/blog/tools/fundamentos-de-jenkins-a4470f4f-64ac-4f17-958a-89b0faa87f1f/</guid>
+      <description>Fundamentos de Jenkins En los últimos tiempos, para los que trabajamos en TI escuchar conceptos como Integración Continua (CI), Entrega Continua (CD), Jenkins y Pipelines es muy común y los hemos adoptados dentro de nuestro día a día, pero muchas veces sin entender por completo de lo que estamos hablando.
+Para esto, he escrito el siguiente post con el fin de aclarar dudas respecto a estas metodologías y tecnologías que ya son un must en casi todas las compañías que trabajan con equipos de desarrollos tanto en entornos On-Premise como Cloud.</description>
+    </item>
+    
+  </channel>
+</rss>

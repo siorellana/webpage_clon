@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on siorellana&#39;s Web Site</title>
+    <link>http://siorellana.com/categories/</link>
+    <description>Recent content in Categories on siorellana&#39;s Web Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 05 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://siorellana.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cloud</title>
+      <link>http://siorellana.com/categories/cloud/</link>
+      <pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://siorellana.com/categories/cloud/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DevOps</title>
+      <link>http://siorellana.com/categories/devops/</link>
+      <pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://siorellana.com/categories/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jenkins</title>
+      <link>http://siorellana.com/categories/jenkins/</link>
+      <pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://siorellana.com/categories/jenkins/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AWS</title>
+      <link>http://siorellana.com/categories/aws/</link>
+      <pubDate>Sun, 09 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://siorellana.com/categories/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DB</title>
+      <link>http://siorellana.com/categories/db/</link>
+      <pubDate>Sun, 09 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://siorellana.com/categories/db/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RDS</title>
+      <link>http://siorellana.com/categories/rds/</link>
+      <pubDate>Sun, 09 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://siorellana.com/categories/rds/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ELB</title>
+      <link>http://siorellana.com/categories/elb/</link>
+      <pubDate>Sat, 08 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://siorellana.com/categories/elb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VPC</title>
+      <link>http://siorellana.com/categories/vpc/</link>
+      <pubDate>Fri, 07 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://siorellana.com/categories/vpc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>EC2</title>
+      <link>http://siorellana.com/categories/ec2/</link>
+      <pubDate>Wed, 05 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://siorellana.com/categories/ec2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Herramientas</title>
+      <link>http://siorellana.com/categories/herramientas/</link>
+      <pubDate>Sat, 01 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://siorellana.com/categories/herramientas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Markdown</title>
+      <link>http://siorellana.com/categories/markdown/</link>
+      <pubDate>Sat, 01 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://siorellana.com/categories/markdown/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

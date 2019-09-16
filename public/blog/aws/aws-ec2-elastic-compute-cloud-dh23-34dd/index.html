@@ -1,0 +1,1033 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+<title>AWS Elastic Compute Cloud (EC2) - siorellana&#39;s Web Site</title>
+<meta name="description" content="Principios básicos de AWS EC2">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+
+  <meta name="generator" content="Hugo 0.57.2" />
+  <meta itemprop="name" content="AWS Elastic Compute Cloud (EC2)">
+<meta itemprop="description" content="Principios básicos de AWS EC2">
+
+
+<meta itemprop="datePublished" content="2019-06-05T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-06-05T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="3559">
+
+
+
+<meta itemprop="keywords" content="" />
+
+  <meta property="og:title" content="AWS Elastic Compute Cloud (EC2)" />
+<meta property="og:description" content="Principios básicos de AWS EC2" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://siorellana.com/blog/aws/aws-ec2-elastic-compute-cloud-dh23-34dd/" />
+<meta property="article:published_time" content="2019-06-05T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-06-05T00:00:00+00:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="AWS Elastic Compute Cloud (EC2)"/>
+<meta name="twitter:description" content="Principios básicos de AWS EC2"/>
+
+  
+
+  <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
+  
+    
+      <link rel="stylesheet" href="/css/normalize.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
+      <link rel="stylesheet" href="/css/main.min.css">
+      <link rel="stylesheet" href="/css/add-on.css">
+    
+  
+  
+</head>
+
+  <body>
+    
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/">
+        
+          
+            Blog
+          
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu">
+      
+        <a href="/" class="link"><i class="fas fa-home">&nbsp;</i>Inicio</a>
+      
+        <a href="/about/" class="link"><i class="far fa-id-card">&nbsp;</i>Sobre mí</a>
+      
+        <a href="/blog/" class="link"><i class="far fa-newspaper">&nbsp;</i>Blog</a>
+      
+        <a href="/categories/" class="link"><i class="fas fa-sitemap">&nbsp;</i>Categorias</a>
+      
+        <a href="/contact/" class="link"><i class="far fa-envelope">&nbsp;</i>Contacto</a>
+      
+      <a href="#share-menu" class="share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>
+      
+
+    </menu>
+    
+
+    <a href="#share-menu" class="share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>
+    <a href="#lang-menu" class="lang-toggle" lang="en"><span class="flag-icon flag-icon-en" alt="en"></span></a>
+    <a href="#site-nav" class="nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="lang-menu" class="flyout-menu">
+  <a href="#" lang="en" class="active"><span class="flag-icon flag-icon-en" alt="en"></span></a>
+  
+    
+      
+    
+  
+</menu>
+
+  
+    <menu id="share-menu" class="flyout-menu">
+      <h1>Share Post</h1>
+      
+
+
+
+  
+    <a href="//twitter.com/share?url=&amp;text=&amp" target="_blank" rel="noopener" class="share-btn twitter">
+        <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=" target="_blank" rel="noopener" class="share-btn facebook">
+        <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
+        </a>
+  
+
+  
+    <a href="//reddit.com/submit?url=&amp;title=" target="_blank" rel="noopener" class="share-btn reddit">
+          <i class="fab fa-reddit-alien"></i><p>&nbsp;Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=&amp;title=" target="_blank" rel="noopener" class="share-btn linkedin">
+            <i class="fab fa-linkedin"></i><p>&nbsp;LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="mailto:?subject=Check out this post by &amp;body=" target="_blank" class="share-btn email">
+          <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
+        </a>
+  
+
+
+    </menu>
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro">
+  <a href="/"><img src="/img/main/logo.jpg" class="rectangle" width="" alt="Beauty Profile Picture" /></a>
+  <header>
+    <h1>Sebastian Orellana</h1>
+  </header>
+  <main>
+    <p>DevOps | More Ops than Dev..</p>
+  </main>
+  
+    <footer>
+      <ul class="social-icons">
+        
+
+        <li><a href="//github.com/siorellana" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/in/siorellana" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:sebastian.orellana@me.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        <article class="post">
+  <header>
+  <div class="title">
+    
+        <h2><a href="/blog/aws/aws-ec2-elastic-compute-cloud-dh23-34dd/">AWS Elastic Compute Cloud (EC2)</a></h2>
+    
+    
+        <p>Principios básicos de AWS EC2</p>
+    
+</div>
+  <div class="meta">
+    <time class="published" datetime="2019-06-05 00:00:00 &#43;0000 UTC">
+      June 5, 2019
+    </time>
+    <span class="author">siorellana</span>
+    
+        <p>17 Minutos de lectura</p>
+    
+  </div>
+</header>
+
+  <section id="social-share">
+    
+
+
+
+  
+    <a href="//twitter.com/share?url=&amp;text=&amp" target="_blank" rel="noopener" class="share-btn twitter">
+        <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=" target="_blank" rel="noopener" class="share-btn facebook">
+        <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
+        </a>
+  
+
+  
+    <a href="//reddit.com/submit?url=&amp;title=" target="_blank" rel="noopener" class="share-btn reddit">
+          <i class="fab fa-reddit-alien"></i><p>&nbsp;Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=&amp;title=" target="_blank" rel="noopener" class="share-btn linkedin">
+            <i class="fab fa-linkedin"></i><p>&nbsp;LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="mailto:?subject=Check out this post by &amp;body=" target="_blank" class="share-btn email">
+          <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
+        </a>
+  
+
+
+  </section>
+  
+<a href="/blog/aws/aws-ec2-elastic-compute-cloud-dh23-34dd/" class="image featured">
+  <img src="/img/2019/06/alexandre-debieve-561298-unsplash.jpg" alt="Photo by Alexandre Debiève on Unsplash">
+</a>
+
+
+  <div class="content">
+    
+
+<h1 id="aws-ec2-elastic-compute-cloud">AWS EC2 Elastic Compute Cloud</h1>
+
+<p>EC2 es el servicio de AWS que permite crear maquinas virtuales en la nube. Para efectos prácticos se llaman instancias, ya que cuando se crea una máquina virtual nueva, en realidad se crea una instancia dentro de un host. Estas instancias están diseñadas para imitar el comportamiento de una maquina física, tal como lo hace VMWare o Hyper-V, pero con la ventaja de poder ser creadas y eliminadas bajo demanda para así lograr la elasticidad, simplicidad y escalabilidad que tienen trabajar con los proveedores de servicios cloud.</p>
+
+<p>En este post abordaremos los distintos conceptos claves para entender cómo funcionan las instancias EC2 en el ecosistema de AWS.</p>
+
+<p><strong>Escalabilidad</strong>: Capacidad de crecer bajo demanda.</p>
+
+<p><strong>Elasticidad</strong>: Capacidad de adaptarse a los cambios, tanto para crecer como para decrecer.</p>
+
+<p><strong>Simplicidad</strong>: Simple, se pueden crear instancias de EC2 utilizando una API.</p>
+
+<h2 id="cómo-funciona-el-servicio-ec2">¿Cómo funciona el servicio EC2?</h2>
+
+<p>AWS cuenta con servidores físicos en cada uno de sus datacenters, estos servidores físicos son llamados Host Server y en ellos se instala un software de virtualización que permite disponibilizar recursos físicos y asignarlos a máquinas virtuales.</p>
+
+<p>En cada Host los recursos son compartidos para distintos clientes de AWS, los cuales son aislados mediante grupos de políticas de seguridad y reglas de firewall.</p>
+
+
+
+
+  
+    
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="fancybox">
+    <a data-fancybox="Gallery Name" href="/img/2019/06/Untitled-1fdf65a5-6ad3-486b-b0ea-a2035c1c0e25.png" data-caption="Distribución de recursos virtuales para instancias EC2. Por Linux Academy."><img src="/img/2019/06/Untitled-1fdf65a5-6ad3-486b-b0ea-a2035c1c0e25.png"></a>
+    <div class="caption">Distribución de recursos virtuales para instancias EC2. Por Linux Academy.</div>
+  </div>
+
+
+
+<p>Respecto a la virtualización, que consiste en el proceso de crear una versión virtual del hardware, Amazon Web Services trabaja con un software llamado Xen Hypervisor, el cual soporta dos tipos de virtualización:</p>
+
+<p><strong>HVM (Hardware Virtual Machine):</strong> Este tipo de virtualización provee la habilidad de ejecutar el sistema operativo directamente sobre la maquina virtual, logrando tener una mayor compatibilidad con el hardware del host.</p>
+
+<p><strong>PV (Paravirtual):</strong> No crea una maquina virtual en sí, si no que entrega una interfaz con recursos especificos para que los use el usuario. Logra tener un mayor performance, pero es limitado en cuanto a las características de compatibilidad de hardware.</p>
+
+<blockquote>
+<p>Protip: PV es cosa del pasado, la moda ahora es HVM.</p>
+</blockquote>
+
+<h2 id="configuración">Configuración</h2>
+
+<p>Cada instancia puede ser creada de diferentes tipos y formas, tanto en recursos como en sistema operativo, siendo los sabores mas utilizados Linux y Windows.</p>
+
+<p>Cada instancia se encuentra compuesta de los siguientes componentes:</p>
+
+<p><strong>Amazon Machine Image (AMI):</strong> El sistema operativo y otras configuraciones.</p>
+
+<p><strong>Tipo de Instancia</strong>: Recursos que tendrá la instancia (CPU, Ram, Ancho de banda, etc.)</p>
+
+<p><strong>Interfaces de red:</strong> Publicas, privadas o direcciones IP elásticas.</p>
+
+<p><strong>Storage:</strong> El &ldquo;disco duro&rdquo; de la instancia, que pueden ser de dos tipos:</p>
+
+<ul>
+<li><strong>Elastic block Storage (EBS)</strong>: Disco de red persistente.</li>
+<li><strong>Instance Store</strong>: El cual consiste de un storage efímero (Se apaga la instancia, se borra el disco y su contenido).</li>
+</ul>
+
+<h2 id="datos-de-vital-relevancia">Datos de vital relevancia</h2>
+
+<ul>
+<li>Cada vez que se cree una instancia, se debe asignar a un grupo de políticas de seguridad (security group) o también conocido como Firewall, el cual permite o denega el tráfico a través de los distintos puertos desde y hacía la instancia.</li>
+<li>Cada instancia debe ser incorporada en una VPC (Virtual Private Cloud), AZ (Availability Zona) y subnet.</li>
+<li>Existe la opción de asignar o programar la ejecución de scripts de manera automática.</li>
+<li>Pueden utilizarse &ldquo;Tags&rdquo; para ayudar a ordenar y organizar las instancias, por ambientes, proyectos, etc.</li>
+<li>Para autentificarse y conectarse a estas instancias, debe trabajarse con llaves encriptadas o SSH-Keys.</li>
+<li>Existe un límite máximo de instancias que pueden ser creadas por cada región. En caso de necesitar mas instancias, pueden solicitarse desde el portal.</li>
+<li>Las mantenciones de los servidores físicos y de Xen Hypervisor es manejada por AWS</li>
+</ul>
+
+<p>A continuación revisaremos en detalle cada uno de los pasos necesarios para crear una instancia EC2.</p>
+
+<h2 id="paso-1-amazon-machine-images-ami-s">Paso 1: Amazon Machine Images (AMI&rsquo;s)</h2>
+
+<p>Son un paquete preconfigurado de software (template) que es requerido para crear una instancia EC2. Este paquete incluye:</p>
+
+<ul>
+<li>Sistema operativo.</li>
+<li>Paquetes de softwares</li>
+<li>Otras configuraciones requeridas (Storage y tipo de virtualización).</li>
+</ul>
+
+
+
+
+  
+    
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="fancybox">
+    <a data-fancybox="Gallery Name" href="/img/2019/06/Untitled-67609547-7cff-4a11-8118-1d70c48b5fee.png" data-caption="EC2 Maketplace."><img src="/img/2019/06/Untitled-67609547-7cff-4a11-8118-1d70c48b5fee.png"></a>
+    <div class="caption">EC2 Maketplace.</div>
+  </div>
+
+
+
+<p>Existen tres tipos de AMIs disponibles para ser usadas en la creación de instancias EC2:</p>
+
+<ul>
+<li>AWS Marketplace: Provee templates que se pagan por uso y que generalmente contiene uso de licencias de software.</li>
+<li>Community AMIs: De uso gratis, generalmente sólo provee el sistema operativo o algunas herramientas Open Source.</li>
+<li>AMIs propias: Se pueden crear AMIs personalizadas.</li>
+</ul>
+
+<h2 id="paso-2-tipos-de-instancias-ec2">Paso 2: Tipos de instancias EC2</h2>
+
+<p>Los tipos de instancias son descritos como los componentes de hardware que va a tener la instancia. Estos componentes son:</p>
+
+<ul>
+<li>Computer Power (procesador/vCPU)</li>
+<li>Memoria (RAM)</li>
+<li>Opciones y optimizaciones de Storage</li>
+<li>Rendimiento de red</li>
+</ul>
+
+<p>Cada tipo de instancia esta diseñado para suplir distintas necesidades de computo que vayan a requerir cada aplicación que se ejecutará en la instancia.</p>
+
+<h3 id="características-del-procesador">Características del procesador</h3>
+
+
+
+
+  
+    
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="fancybox">
+    <a data-fancybox="Gallery Name" href="/img/2019/06/Untitled-85c4e300-55f1-4a8e-961c-765eb798a521.png" data-caption=""><img src="/img/2019/06/Untitled-85c4e300-55f1-4a8e-961c-765eb798a521.png"></a>
+    <div class="caption"></div>
+  </div>
+
+
+
+<p>Las instancias de Amazon EC2 que cuentan con un procesador Intel pueden ofrecer acceso a las siguientes características avanzadas del procesador:</p>
+
+<ul>
+<li><strong>AVX</strong> - Las instrucciones Intel AVX mejoran el rendimiento de aplicaciones de procesamiento de audio/vídeo e imágenes, simulaciones científicas, análisis financieros, y análisis y modelado en 3D. Estas características solo están disponibles en las instancias ejecutadas con AMI HVM.</li>
+<li><strong>AES-NI</strong> - Cifrado que mejora el estándar AES con mayor velocidad y seguridad, sin degradación de performance.</li>
+<li><strong>Turbo Boost Technology</strong> - Permite realizar un overclocking del procesador en base a necesidad de manera eficiente.</li>
+<li><strong>Transactional Synchronization Extensions (TSX)</strong> - Mejor performance para transacciones multi-threaded (paralelas)</li>
+</ul>
+
+<h3 id="tipos-de-instancias-https-www-notion-so-fffd28b37f1447ca919ffba90ba02d12"><a href="https://www.notion.so/fffd28b37f1447ca919ffba90ba02d12">Tipos de instancias</a></h3>
+
+<table>
+<thead>
+<tr>
+<th>Familia</th>
+<th>Categoria</th>
+<th>Descripción</th>
+<th>Casos de uso</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>M5</td>
+<td>Propósito General</td>
+<td>&ldquo;Balace entre memoria, CPU y recursos de red&rdquo;</td>
+<td>Bases de datos pequeñas y medianas</td>
+</tr>
+
+<tr>
+<td>C5</td>
+<td>Optimizado para computo</td>
+<td>Avanzado en CPU</td>
+<td>&ldquo;Modelamiento científico, Machine Learning&rdquo;</td>
+</tr>
+
+<tr>
+<td>H1</td>
+<td>Optimizado para alamacenamiento</td>
+<td>Discos duros locales</td>
+<td>&ldquo;MapReduce, sistemas de archivos de por red NFS.&rdquo;</td>
+</tr>
+
+<tr>
+<td>R4</td>
+<td>Optimizado para memoria</td>
+<td>Mas RAM por dolar</td>
+<td>Cache en memoria</td>
+</tr>
+
+<tr>
+<td>X1</td>
+<td>Optimizado para memoria</td>
+<td>TB de RAM y disco SSD</td>
+<td>&ldquo;Bases de datos en memoria (BigData), SAP HANA&rdquo;</td>
+</tr>
+
+<tr>
+<td>I3</td>
+<td>Optimizado para I/O</td>
+<td>Almacenamiento SSD local y mayor IOPS (Input Output per Seconds)</td>
+<td>&ldquo;Bases de datos no relacional, NoSQL&rdquo;</td>
+</tr>
+
+<tr>
+<td>G3</td>
+<td>Optimizado para gráficos GPU</td>
+<td>Uso intensivo de gráficos de video</td>
+<td>&ldquo;Visualización 3D, transmisión de video&rdquo;</td>
+</tr>
+
+<tr>
+<td>F1</td>
+<td>Optimizado para cómputo GPU</td>
+<td>Uso de cores de GPU</td>
+<td>&ldquo;Análisis financieros, Procesamiento de video en tiempo real&rdquo;</td>
+</tr>
+
+<tr>
+<td>T2</td>
+<td>Flexible</td>
+<td>&ldquo;CPU compartida, bajo costo&rdquo;</td>
+<td>&ldquo;Servidores Web, Entornos de desarrollo y prueba.&rdquo;</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="paso-3-detalles-de-instancia-y-bootstrapping">Paso 3: Detalles de instancia y Bootstrapping</h2>
+
+<h3 id="ec2-ip-addresses">EC2 IP Addresses</h3>
+
+<p>Cada zona por defecto trae una VPC (red privada cloud), que será la red donde todas las instancias estarán conectadas entre sí. De todas formas se pueden crear VPC personalizadas.</p>
+
+<p>Adicionalmente, cada una de las VPC contiene subnets o subredes, que identificará cada una de las distintas AZ.</p>
+
+<p>En la subnet que se ha elegido la creación de la instancia, a esta instancia se le asignará automáticamente una IP Privada, la cual funcionará sólo para comunicar distintas instancias dentro de una VPC de una manera privada, es decir, replicando un entorno local.</p>
+
+<p>En caso de requerir comunicar la instancia de manera pública a travez de internet, se le puede asignar también una IPV4 o IPV6 pública. Esto es necesario si se requiere acceder a la instancia EC2 desde SSH, por ejemplo.</p>
+
+<p>Existe una tercera opción de IP y consiste en Elastic IP Address, la cual consiste en asignar de manera dinámica una IP Pública a una instancia u otra. Esto es útil en caso de que una maquina por ejemplo falle y necesitemos crear una nueva, a esta nueva máquina se le puede asociar la IP antigua para dar continuidad o reemplazar al servidor anterior.</p>
+
+<h3 id="otros-detalles">Otros detalles</h3>
+
+<p><strong>Shutdown behavior:</strong> Permite modificar el comportamiento del servidor al apagarla. Las opciones pueden ser:</p>
+
+<ul>
+<li>Stop: La cual detiene la instancia cuando se apaga.</li>
+<li>Terminate: La cual elimina la instancia cuando se apaga.</li>
+</ul>
+
+<p><strong>Enable termination protection:</strong> Consiste en una protección que no permite que la máquina sea eliminada por error.</p>
+
+<p><strong>Monitoring:</strong> Habilita el monitoreo de la instancia por CloudWatch y comienzan a obtenerse métricas de la instancia.</p>
+
+<p><strong>Tenancy:</strong> Indica si la instancia utilizará recursos compartidos, recursos dedicados o incluso un Host dedicado. Esto obviamente con costos y cargos adicionales.</p>
+
+<p><strong>Network interfaces:</strong> En caso de que sea requerido contar con mas de una interfaz de red, se puede agregar en este punto. Esta segunda interfaz de red puede eliminarse o asignarse a otra instancia</p>
+
+<h3 id="detalle-avanzados">Detalle avanzados</h3>
+
+<p>En esta sección se pueden añadir Bootstrapping o procesos de inicio automatizados o incluso una serie de comandos sin output o salida. En este punto se pueden añadir comandos personalizados como instalación de paquetes, instalación de software, configuraciones especiales que de deba tener la instancia, entre otras configuraciones.</p>
+
+<p>En la sección <strong>User-Data</strong> se puede añadir el código o script que se desea ejecutar en el proceso de creación de la instancia. Por ejemplo, si en la creación de la instancia se quiere instalar un servidor web como Apache, se puede añadir lo siguiente en la sección User-Data.</p>
+
+<pre><code>#!/bin/bash
+yum update -y
+yum install -y httpd
+service httpd start
+</code></pre>
+
+<p>También, es posible realizar la descarga e instalación de paquetes de software o de configuración de infraestructura, permitiendo descargar el archivo, instalarlo y luego generar la configuración del software.</p>
+
+<h2 id="paso-4-almacenamiento">Paso 4: Almacenamiento</h2>
+
+<p>Es importante realizar la correcta elección del almacenamiento que será previsto a la instancia. Existen tres tipos de almacenamiento que puede ser seleccionados.</p>
+
+<p>La primera es Instance Store y corresponde a un disco que se encuentra de forma local en el servidor Host o en el Storage del servidor Host.</p>
+
+<p>El segundo tipo de almacenamiento corresponde a EBS Volumes (Elastic Block Storage) y es un espacio ubicado fuera del host y que puede ser asignado a distintas instancias, pero siempre a una a la vez.</p>
+
+<p>En caso de que sea necesario presentar información de manera compartida, exista la tercera opción que corresponde a EFS (Elastic FileSystem), que permite montar de manera compartida un filesystem por la red con NFS.</p>
+
+
+
+
+  
+    
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="fancybox">
+    <a data-fancybox="Gallery Name" href="/img/2019/06/Untitled-e4ea2241-858a-4184-a2e8-3b373814139a.png" data-caption="Opciones de almacenamiento. Por LinuxAcademy"><img src="/img/2019/06/Untitled-e4ea2241-858a-4184-a2e8-3b373814139a.png"></a>
+    <div class="caption">Opciones de almacenamiento. Por LinuxAcademy</div>
+  </div>
+
+
+
+<h3 id="ebs-elastic-block-storage">EBS Elastic Block Storage</h3>
+
+<p>Su principal característica es que son permanentes, es decir, pueden durar incluso cuando la instancia es eliminada. Son volúmenes que se disponibilizan por red, por lo que se pueden atachar y desatachar de las instancias sin mayor dificultas, sin embargo, sólo pueden estar atachados a una instancia a la vez.</p>
+
+<p>Adicionalmente, los EBS tienen el beneficio de poder ser respaldados como Snapshots en buckets de S3, lo cual permite cierta movilidad de poder recuperar un EBS en otro volumen EBS.</p>
+
+<h4 id="performance">Performance</h4>
+
+<p>El performance de los volúmenes EBS es medido por operaciones de entrada y de salida (input/output) o IOPS. IOPS es la cantidad de operaciones de entrada y salida por segundo, estos IOPS son de un tamaño máximo de 256KB, por lo que si una operación tiene un tamaño mayor, es dividido en bloques de tamaños de 256KB. Por ejemplo, una operación de 512KB contará como 2 IOPS.</p>
+
+<p>Es importante conocer y entender los requerimientos de IOPS que la aplicación o la arquitectura propuesta debe tener, para no afectar el performance de la aplicación. Para esto, existen varios tipos de EBS que suplen distintos requerimientos de IOPS para los volúmenes EBS.</p>
+
+<p>Cuando se crea un nuevo volumen EBS desde un snapshot, este debe ser inicializado. Este proceso de inicialización ocurre cuando el volumen es leído, durante este proceso, el performance del volumen se puede ver afectado hasta en un 50%.</p>
+
+<blockquote>
+<p>Protip: Al crear una instancia desde un EBS Snapshot, puedes crear un script que haga una lectura del disco durante inicialización para evitar degradación en el futuro y agregarlo en la sección <strong>User-Data</strong>.</p>
+</blockquote>
+
+<h4 id="tipos-de-ebs">Tipos de EBS</h4>
+
+<p>Existen principalmente dos tipos de discos: SSD y HDD. Dentro de cada una de estas categorias existen dos sabores:</p>
+
+<ul>
+<li><strong>Solid-State Drives(SSD):</strong>
+
+<ul>
+<li><strong>Propósito general (gp2)</strong>
+
+<ul>
+<li>Uso para ambientes de desarrollo y prueba.</li>
+<li>Hasta 32.000 IOPS</li>
+<li>Tamaño desde 1GB hasta 16TB.</li>
+</ul></li>
+<li><strong>Provisioned IOPS SSD (io1)</strong>
+
+<ul>
+<li>Idealmente para ambientes críticos que requieren alta carga de IOPS</li>
+<li>Grandes cargas de bases de dato</li>
+<li>Tamaños desde 4GB hasta 16TB</li>
+<li>Hasta 64.000 IOPS por volumen</li>
+</ul></li>
+</ul></li>
+<li><strong>Hard Disk Drives (HDD):</strong>
+
+<ul>
+<li><strong>Throughput Optimizado (st1)</strong>
+
+<ul>
+<li>Almacenamiento de bajo costo</li>
+<li>Usado para acceso frecuente de información o cargas intensivas como Streaming o BigData.</li>
+<li>No puede ser utilizado como volumen de inicio.</li>
+<li>Tamaño desde 500GB hasta 16TB</li>
+<li>Throughput máximo de 500Mb/s</li>
+</ul></li>
+<li><strong>Cold HHD (sc1)</strong>
+
+<ul>
+<li>El mas barato de todos</li>
+<li>Usado para acceso a información de forma poco frecuente</li>
+<li>No puede ser usado como volumen de inicio</li>
+<li>Tamaño desde 500GB hasta 16TB</li>
+<li>Throughput máximo de 250 Mb/s</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3 id="local-storage">Local Storage</h3>
+
+<p>Estos volúmenes son dispositivos virtuales que son físicamente conectados al servidor Host donde esta ejecutándose la instancia. Estos discos son mucho mas rápidos pero sólo se encuentran disponibles mientras la instancia esta en ejecución. Se la instancia es detenida o apagada, la información en el volumen es eliminada. Sin embargo, la instancia puede ser reiniciada sin perder la información.</p>
+
+<h2 id="paso-5-agrega-tags">Paso 5: Agrega Tags</h2>
+
+<p>Son una herramienta opcional que tiene como fin darle una organización y clasificación de las instancias. Por ejemplo, si las instancias son de un ambiente para desarrolladores, puedes agregarle un <em>tag</em> llamado <strong>DEV</strong> para identificar que pertenecen a ese grupo.</p>
+
+<h2 id="paso-6-security-groups">Paso 6: Security Groups</h2>
+
+<p>Consiste en un firewall que crea reglas de acceso de trafico desde y hacia las instancias. Un security group puede ser compartido con varias instancias.</p>
+
+<p>Desde aquí por ejemplo, se pueden añadir reglas para admitir algún puerto especifico como el 22 que corresponde a SSH y desde alguna dirección IP específica y habilitar el acceso por el puerto 443 desde cualquier IP a través de internet.</p>
+
+<p>Existen dos tipos de reglas que deben ser consideradas a la hora de admitir o denegar tráfico. Uno es a nivel de red considerado <strong>stateless</strong> o olvidadizo o no estático y es llamado Network ACL y es aplicada a cada subnet dentro de una VPC. Debe especificarle como va a fluir el tráfico a través de una VPC, es decir, si necesitamos que el tráfico pase por el puerto 80 hay que especificar una regla <strong>allow</strong> tanto para el el tráfico entrante <strong>inbound</strong> o saliente <strong>outbound.</strong></p>
+
+<p>La otra regla es a nivel instancia y funciona de la misma forma que lo hace un firewall. Por defecto todo el tráfico esta <strong>Denied</strong> al menos que haya un <strong>Allow</strong> explícito. Es <strong>statefull</strong> por que &ldquo;recuerda&rdquo; que si una regla es permitida en la entrada, debe ser permitida a la salida. La diferencia primordial con un NACL es que es a nivel de instancia.</p>
+
+<h3 id="ec2-key-pairs">EC2 Key Pairs</h3>
+
+<p>Consiste en dos claves criptográficas que son utilizadas para autenticar a los clientes o usuarios cuando se conectan a una instancia EC2. Cada par de claves consisten en una llave pública y una llave privada. AWS se encarga de almacenar la llave pública y nosotros somos responsables de almacenar la llave privada. Esta llave sólo puede ser descargada cuando es creada, en caso de que no la hayas descargado o se haya perdido, debes generer un nuevo juego de llaves.</p>
+
+<p>Para ingresar a una instancia EC2, se deben crear y autenticar un par de llaves, ya que las instancias con linux no tienen contraseñas y la única forma de conectarse es utilizando las llaves.</p>
+
+<p>En instancias con Windows, teniendo las llaves se puede obtener la contraseña de administrador e ingresar a la instancia utilizando un cliente RDP (Remote Desktop Protocol).</p>
+
+<p>Las llaves son creadas o registradas en el caso de ya contar con un par de llaves, durante el proceso de creación de la instancia. Una vez completada la creación de la instancia, se puede descargar la llave privada en formato .pem, y debe ser almacenada con los permisos adecuados. Esto se puede realizar ejecutando el siguiente comando:</p>
+
+<pre><code>chmod 400 [llave_privada].pem
+</code></pre>
+
+<p>Una vez descargada la llave privada, se puede acceder a la instancia en caso de ser linux, con el siguiente comando desde alguna terminal:</p>
+
+<pre><code>ssh -i ~/path-to-file/[llave_privada].pem ec2-user@&lt;ip_publica&gt;
+</code></pre>
+
+<p>El usuario ec2-user cuenta con permisos para hacer sudo en la instancia.</p>
+
+<p><strong>Una vez completados estos 6 pasos ya se cuenta con una instancia EC2 funcionando en AWS.</strong></p>
+
+<hr />
+
+<h1 id="otros-conecptos-importantes">Otros conecptos importantes</h1>
+
+<h2 id="ebs-snapshots">EBS Snapshots</h2>
+
+<p>Backups son una parte esencial para poder mantener en el tiempo una aplicación. Snapshot son respaldos basados en un punto de tiempo del volumen EBS y es almacenado en un bucket de S3. Estos respaldos son incrementales por defecto, por lo que solo respaldará los cambios mas recientes realizados desde el ultimo backup, reduciendo costos principalmente por almacenamiento.</p>
+
+<p>Si un snapshot antiguo es eliminado, se mantendrán los bloques necesarios para recuperar otros snapshot que aun tienen una retención válida, garantizando la consistencia de los datos.</p>
+
+<p>Snapshot pueden ser utilizados para dos cosas:</p>
+
+<ul>
+<li>Crear respaldos que permitan realizar la recuperación completa de un volumen EBS.</li>
+<li>Crear AMIs personalizadas.</li>
+</ul>
+
+<p>Es recomendable realizar respaldos lo mas frecuente que requiera la trama y es importante asegurar la consistencia de los datos, deteniendo procesos de escrituras en los volúmenes.</p>
+
+<p>Los snapshots quedan disponibles para ser recuperados sólo en la misma región donde fueron tomados, pero pueden copiarse a otras regiones con la opción &ldquo;Copy Snapshot&rdquo; a través de la consola. También, estos snapshots son por defecto privados y sólo pueden ser generados o utilizados por la cuenta o persona que es dueño del volumen, sin embargo, pueden ser compartidos entre otras cuentas.</p>
+
+<h2 id="placement-groups-o-clusters">Placement Groups o Clusters</h2>
+
+<p>Son grupos de instancias ubicadas en la misma AZ que se utilizan para altas cargas de trabajo y garantizan una alta performance para las aplicaciones y ancho de banda disminuyendo también la latencia. AWS intenta colocar todas las instancias lo mas junto posible fisicamente en el datacenter para maximizar el ancho de banda (hasta 25Gbps). Se puede utilizar Enhanced Networking (red mejorada) para maximizar el beneficio. Es recomendable solicitar todas las instancias requeridas en una sola petición, todas las instancias serán creadas con el mismo tipo de instancia.</p>
+
+<p>Si un miembro del grupo es apagado, una vez que inicie otra vez continuará siendo parte del cluster.</p>
+
+<h2 id="opciones-de-compra">Opciones de compra</h2>
+
+<p>EC2 tiene dos formas de compra de instancias, bajo demanda o reservada.</p>
+
+<ul>
+<li>On-Demand:
+
+<ul>
+<li>Permite crear instancias y eliminarlas cuando uno quiera en cualquier momento.</li>
+<li>Es mas caro para instancias que estarán en ejecución durante largos periodos de tiempo.</li>
+<li>Es mas flexible</li>
+<li>Sólo se paga por el tiempo que la instancia ha estado encendida.
+
+<ul>
+<li>Precio por segundo: Para AMIs Amazon Linux y Ubuntu</li>
+<li>Precio por hora: Windows, RHEL, o cualquier otra AMI donde no se especifica precio por segundo.</li>
+</ul></li>
+</ul></li>
+<li>Reservadas:
+
+<ul>
+<li>Permite comprar instancias por una cantidad de tiempo definido entre un año o tres años.</li>
+<li>Permite obtener descuentos significativos en comparación con las instancias On-Demand.</li>
+<li>Descuentos pueden llegar hasta un 75%.</li>
+</ul></li>
+</ul>
+
+<p>Adicionalmente a estas dos opciones de compra, existen las instancias <em>Spot</em>. Esta opción permite a AWS vender el uso de instancias en desuso, por un corto periodo de tiempo con un descuento sustancial. Como funciona? Eliges el precio máximo que quieres pagar por una instancias, entonces cuando la demanda baje y el precio de la instancia es igual o menor que el precio requerido, se inicia la instancia. Se paga por uso aplicando las mismas condiciones de AMIs expuestas anteriormente. La instancia Spot es terminada o hibernada cuando el precio de la instancia nuevamente comienza a subir hasta sobrepasar el valor ingresado. Hay un warnning de dos minutos.</p>
+
+<p>Si AWS elimina la instancia antes de la hora de uso, no se realiza cargo.</p>
+
+<h2 id="aws-efs-essentials">AWS EFS Essentials</h2>
+
+<p>EFS es un filesystem por red muy similar al concepto de NFS, que consiste en un servidor que provee un filesystem a través de la red para que otros servidores puedan hacer uso de este filesytem.</p>
+
+<p>La capacidad de este volumen es elástico, por lo que no hay que preocuparse por quedarse sin espacio, ya que el tamaño del volumen crece con el volumen de la información que se almacena en el filesystem. Debido a esto, las aplicaciones que corren en instancias EC2 que usan EFS, siempre tendrán el espacio necesario para funcionar sin la necesidad de añadir un disco adicional.</p>
+
+<p>Adicionalmente, las instancias EFS son totalmente autoadministradas, por lo que no requieren mantención.</p>
+
+<p>Algunos de los beneficios que se tiene al trabajar con este tipo de almacenamiento son:</p>
+
+<ul>
+<li>Los volúmenes EFS pueden ser presentados a más de una instancia EC2 al mismo tiempo, por lo que los archivos almacenados quedan disponibles para todas las instancias EC2, logrando que las aplicaciones puedan acceder a la misma información.</li>
+<li>Los volúmenes EFS pueden ser presentados también a servidores ubicados en ambientes On-Premises (datacenter locales), siempre y cuando haya conexión a la VPC utilizando AWS Direct Connect. Esto permite realizar migraciones de información o utilizar los volúmenes EFS como solución de respaldo.</li>
+<li>EFS puede escalar a tamaños de petabytes manteniendo la latencia baja y altos niveles de ancho de banda.</li>
+<li>Se paga solo por el monto de almacenamiento que es utilizado.</li>
+<li>Red de potente performance llegando a 100MB/s.</li>
+</ul>
+
+<p>En cuanto a temas de seguridad, los volúmenes son protegidos con permisos POSIX, esto quiere decir que se pueden asignar a Dueños, Grupos y Otros/Todos los siguientes permisos:</p>
+
+<ul>
+<li>Read / Write: Otorga full permisos al filesystem compartido o archivo.</li>
+<li>Read-only: Un usuario puede leer el contenido del archivo y copiarlo, pero no puede guardar cambios en los archivos o filesystem.</li>
+<li>Write-only: Sólo esta permitido escribir el archivo, pero no leer el contenido de este</li>
+<li>No access: El usuario no puede acceder al contenido del filesystem o archivo, tampoco permite copiar.</li>
+</ul>
+
+<p>También se puede restringir el acceso por permisos a través de la red VPC o utilizando el IAM para accesos de APIs.</p>
+
+<p>Adicionalmente, se puede encriptar la información utilizando AWS KMS.</p>
+
+<p>EFS es muy útil para los siguientes casos de uso:</p>
+
+<ul>
+<li>Big Data y análisis de datos.</li>
+<li>Cargas de procesos de contenido multimedia.</li>
+<li>Servidores web y administradores de contenido.</li>
+</ul>
+
+  </div>
+  <footer>
+    <ul class="stats">
+  
+    
+    
+      <li class="categories">
+        <ul>
+          
+            
+            <li><a class="article-category-link" href="http://siorellana.com/categories/aws">AWS</a></li>
+          
+            
+            <li><a class="article-category-link" href="http://siorellana.com/categories/ec2">EC2</a></li>
+          
+            
+            <li><a class="article-category-link" href="http://siorellana.com/categories/cloud">Cloud</a></li>
+          
+        </ul>
+      </li>
+    
+  
+  
+    <li class="tags">
+      <ul>
+        <li>None</li>
+      </ul>
+    </li>
+  
+</ul>
+
+  </footer>
+</article>
+<article class="post">
+  
+
+</article>
+<div class="pagination">
+  
+    <a href="/blog/tools/post-tool-markdown/" class="button big previous"><i class="fas fa-angle-left"></i> Guía para usar Markdown</a>
+  
+  
+    <a href="/blog/aws/aws-vpc-virtual-private-cloud-d7979c3f-49c3-45ae-9540-a4e56ed2bc8c/" class="button big next">AWS Virtual Private Cloud (VPC) <i class="fas fa-angle-right"></i></a>
+  
+</div>
+
+
+      </main>
+      <section id="site-sidebar">
+  <section id="recent-posts">
+    <header>
+      <h1>Posts Recientes</h1>
+    </header>
+    
+    <article class="mini-post">
+      <section>
+        
+<a href="/blog/tools/fundamentos-de-jenkins-a4470f4f-64ac-4f17-958a-89b0faa87f1f/" class="image featured">
+  <img src="/img/2019/08/deva-darshan-Jt9syHEhrPE-unsplash.jpg" alt="Photo by Deva Darshan on Unsplash">
+</a>
+
+
+      </section>
+      <header>
+        <h1><a href="/blog/tools/fundamentos-de-jenkins-a4470f4f-64ac-4f17-958a-89b0faa87f1f/">Jenkins in a nutshell</a></h1>
+        <time class="published" datetime="">August 5, 2019</time>
+      </header>
+    </article>
+    
+    <article class="mini-post">
+      <section>
+        
+<a href="/blog/aws/aws-database-essentials-84d963ea-63a4-4a54-bfbd-b19a84fb20a8/" class="image featured">
+  <img src="/img/2019/06/unplash-database.jpg" alt="Databases">
+</a>
+
+
+      </section>
+      <header>
+        <h1><a href="/blog/aws/aws-database-essentials-84d963ea-63a4-4a54-bfbd-b19a84fb20a8/">AWS Database Essentials</a></h1>
+        <time class="published" datetime="">June 9, 2019</time>
+      </header>
+    </article>
+    
+    <article class="mini-post">
+      <section>
+        
+<a href="/blog/aws/autoscaling-c2b66cf9-bfa7-4162-90ec-240eb9115128/" class="image featured">
+  <img src="/img/2019/06/unplash-load.jpg" alt="AutoScaling">
+</a>
+
+
+      </section>
+      <header>
+        <h1><a href="/blog/aws/autoscaling-c2b66cf9-bfa7-4162-90ec-240eb9115128/">AWS AutoScaling y Elastic Load Balancer (ELB)</a></h1>
+        <time class="published" datetime="">June 8, 2019</time>
+      </header>
+    </article>
+    
+    <article class="mini-post">
+      <section>
+        
+<a href="/blog/aws/aws-vpc-virtual-private-cloud-d7979c3f-49c3-45ae-9540-a4e56ed2bc8c/" class="image featured">
+  <img src="/img/2019/06/unplash-network.jpg" alt="Networking">
+</a>
+
+
+      </section>
+      <header>
+        <h1><a href="/blog/aws/aws-vpc-virtual-private-cloud-d7979c3f-49c3-45ae-9540-a4e56ed2bc8c/">AWS Virtual Private Cloud (VPC)</a></h1>
+        <time class="published" datetime="">June 7, 2019</time>
+      </header>
+    </article>
+    
+    <article class="mini-post">
+      <section>
+        
+<a href="/blog/aws/aws-ec2-elastic-compute-cloud-dh23-34dd/" class="image featured">
+  <img src="/img/2019/06/alexandre-debieve-561298-unsplash.jpg" alt="Photo by Alexandre Debiève on Unsplash">
+</a>
+
+
+      </section>
+      <header>
+        <h1><a href="/blog/aws/aws-ec2-elastic-compute-cloud-dh23-34dd/">AWS Elastic Compute Cloud (EC2)</a></h1>
+        <time class="published" datetime="">June 5, 2019</time>
+      </header>
+    </article>
+    
+    
+      <a href="/blog/" class="button">Ver más</a>
+    
+  </section>
+
+  
+
+  <section id="mini-bio">
+    <header>
+      <h1>Sobre Mí</h1>
+    </header>
+    <p></p>
+    <footer>
+      <a href="/about" class="button">Leer Más</a>
+    </footer>
+  </section>
+</section>
+
+      <footer id="site-footer">
+  
+      <ul class="social-icons">
+        
+
+        <li><a href="//github.com/siorellana" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/in/siorellana" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:sebastian.orellana@me.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+  
+  <p class="copyright">
+    
+      &copy; 2019
+      
+        siorellana&#39;s Web Site
+      
+    .
+    Powered by <a href="//gohugo.io" target="_blank" rel="noopener">Hugo</a>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/html.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/css.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/js.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/toml.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+  <script src=/js/util.js></script>
+  <script src=/js/main.js></script>
+  <script src=/js/add-on.js></script>
+  
+
+
+
+    </div>
+  </body>
+</html>
