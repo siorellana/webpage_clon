@@ -53,7 +53,6 @@ pipeline {
                             sh "git remote -v"
                             echo "======= Mirror to the new repository  ========="
                             sh "git remote set-url --push origin https://${USER}:${PASS}@github.com/siorellana/test_clone.git"
-                            sh "git checkout -b jenkins"
                             sh "git push --mirror"
                             echo "=========================###############################================="
                             echo "=========================###### Finishing process ######=================="
