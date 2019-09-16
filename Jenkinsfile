@@ -14,6 +14,11 @@ pipeline {
     stages {
         stage ('Clonar desde Gitlab') {
             steps {
+                    if (){
+
+                    }
+                    
+                    
                     withCredentials([usernamePassword(
                     credentialsId: 'siorellana-gl', 
                     usernameVariable: 'USER', 
